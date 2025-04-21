@@ -1,12 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-body {
-    font-family: 'Roboto Mono', monospace;
+@keyframes fadePulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
-@media (max-width: 640px) {
-    #clock {
-        font-size: 3rem;
-    }
-    #date {
-        font-size: 1.5rem;
-    }
+
+#clock {
+    animation: fadePulse 1s ease-in-out;
+    transition: all 0.3s ease;
+}
+
+#clock:hover {
+    transform: scale(1.05);
+    color: #38bdf8; /* Tailwind's sky-400 */
+}
+
+#date {
+    animation: fadePulse 1.5s ease-in-out;
+    transition: all 0.3s ease;
+}
+
+#date:hover {
+    color: #facc15; /* Tailwind's yellow-400 */
+}
+
+.animate {
+    animation: fadePulse 0.5s ease-in-out;
 }
